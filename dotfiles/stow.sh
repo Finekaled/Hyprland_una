@@ -1,0 +1,1 @@
+stow -d ~/.dotfiles/Hyprland_una/ -t ~/ dotfiles
