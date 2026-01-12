@@ -9,7 +9,9 @@
         "tray"
     ],
     "modules-right": [
+        "power-profiles-daemon",
         "pulseaudio",
+        "bluetooth",
         "network",
         "battery",
         "custom/notification"
@@ -58,6 +60,17 @@
             "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         }
     },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
@@ -76,6 +89,15 @@
                 "",
                 ""
             ]
+        },
+        "bluetooth": {
+            // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+            "format": " {status}",
+            "format-disabled": "", // an empty format will hide the module
+            "format-connected": " {num_connections} connected",
+            "tooltip-format": "{controller_alias}\t{controller_address}",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
         },
         "scroll-step": 1,
         "on-click": "pavucontrol",

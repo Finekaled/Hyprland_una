@@ -4,3 +4,5 @@ end
 
 
 alias ls="exa -l"
+
+fish_add_path /home/andrew/.spicetify
