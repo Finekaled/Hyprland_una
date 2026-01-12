@@ -6,7 +6,7 @@ WALL_DIR=$HOME/wallpapers
 #Current directory (to cd back to)
 CWD="$(pwd)"
 
-cd "$WALL_DIR" || exit
+cd "$WALL_DIR" || exit 1
 
 # Handle spaces in filenames
 IFS=$'/n'
@@ -16,8 +16,8 @@ SELECTED_WALL=$(for a in *.jpg *.png; do echo -en "$a\0icon\x1f$a\n" ; done | ro
 
 # If not empty, pass to wallset-backend
 if [ -n "$SELECTED_WALL" ]; then
-    ~/.local/bin/./wallset-backend.sh "$SELECTED_WALL"
+    ~/.config/hypr/scripts/wallset-backend.sh "$SELECTED_WALL"
 fi
 
 # Go back to original directory.
-cd "$CWD" || exit
+cd "$CWD" || exit 1
